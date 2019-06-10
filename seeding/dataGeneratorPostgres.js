@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-const ProductDescription = require('../database/models');
-
+const fs = require('fs');
 const dressData = require('./dressDataReduced.json');
 
 // Random Data Arrays
@@ -31,23 +29,45 @@ const seedData = () => {
   return { productName, designer, price, stars, reviews, description, fit, sizes, colors, imageUrlsColor1, imageUrlsColor2 }
 }
 
-// Fills main data array with x number of documents
-const documentsTotal = 100;
-let mainDataArray = [];
-for (let i = 0; i < documentsTotal; i++) {
-  let data = seedData()
-  data.productID = i + 1;
-  mainDataArray.push(data);
+// Seeds into post10M.csv
+const productStream = fs.createWriteStream('./post10M.csv', {flags: 'a'});
+function writeOneMillionTimes(writer, data, encoding, callback) {
+  let i = 0;
+  let max = 10000000;
+  write();
+  function write() {
+    let ok = true;
+    do {
+      i++;
+      if (i === max) {
+        // last time!
+        data = seedData()
+        data.productID = i
+        data = Object.values(data).join('|') + '\n';
+        writer.write(data, encoding, callback);
+      } else {
+        let data = seedData()
+        data.productID = i
+        data = Object.values(data).join('|') + '\n';
+        // See if we should continue, or wait.
+        // Don't pass the callback, because we're not done yet.
+        ok = writer.write(data, encoding);
+      }
+    } while (i < max && ok);
+    if (i < max) {
+      // had to stop early!
+      // write some more once it drains
+      writer.once('drain', write);
+    }
+  }
 }
 
+// //run seeding function
+writeOneMillionTimes(productStream, null, 'utf8', () => console.log('yay'))
 
-// Seeder function creating documents in the DBMS
-const seeder = () => {
-  ProductDescription.create(mainDataArray)
-    .then(() => console.log('seeded'))
-    .then(() => mongoose.connection.close())
-    .catch((err) => console.log(err));
-}
+// //copy into database
+// COPY products("productName",designer,price,stars,reviews,description,fit,sizes,colors,"imageUrlsColor1","imageUrlsColor2","productID")
+// FROM '/Users/AngelaChoi/Desktop/product-description-service/seeding/test2.csv' DELIMITER '|' CSV;
 
-// Runs seeder function
-seeder();
+//psql -U postgres
+// chmod a+rX /users/AngelaChoi/ /users/AngelaChoi/desktop /users/AngelaChoi/Desktop/product-description-service/seeding/test6.csv

@@ -58,7 +58,7 @@ class EssentialInformation extends Component {
           <span className={style.price}>${this.props.price}.00</span>
         </div>
         <div className={style.descriptionContainer}>
-          <p className={style.description}>{this.props.description}</p>
+          <p className={style.description}>{this.props.description[0]}</p>
         </div>
         <div className={style.fitContainer}>
           <span className={style.fit}>Fit</span>

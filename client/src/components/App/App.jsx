@@ -4,7 +4,8 @@ import axios from 'axios';
 import BreadCrumbs from '../BreadCrumbs/BreadCrumbs.jsx';
 import ImageCarousel from '../ImageCarousel/ImageCarousel.jsx';
 import EssentialInformation from '../EssentialInformation/EssentialInformation.jsx';
-import RecommendationBar from '../RecommendationBar/RecommendationBar.jsx'
+import RecommendationBar from '../RecommendationBar/RecommendationBar.jsx';
+import MoreDetails from '../MoreDetails/MoreDetails.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +27,23 @@ class App extends Component {
       colorSelectorArray: [],
       recommendationData: [],
       selectedImgIndex: 0,
-      starsArray: [0,0,0,0,0]
+      starsArray: [0,0,0,0,0],
+      //lets try some new test data
+      _productName: "fake Clothes",
+      _designer: "Guccccccci",
+      _designerDescription: "Gucci da best yo",
+      _price: 9999,
+      _reviewStars: 0,
+      _reviews: 666,
+      _productDescription: ["Diamond perforations add subtle texture and vintage charm to this standby block-heel bootie.", "AND THEN SOME!!!"], // first string is intro descripton, second string is consequent description.
+      _productDetails: [`1 1/2" heel (size 8.5)`, `3 1/2" shaft`, `Side zip closure; adjustable side laces`, `Leather upper/synthetic lining/rubber sole`, `Imported`, `Women's Shoes`, `Item #5674302`], // bullet point of details and care
+      _helpfulInfo: [`The Best Dress for Your Body Type`],
+      _sizeInfo: {
+        sizes: [`Small`, `Medium`, `Large`],
+        fit: "this one's juuuuuuust right",
+        other: [`Offers light support for most A-C cup sizes.`, `Band: XS=32, S=34, M=36, L=38, XL=40.`]
+      }, 
+      _similarStyles: []
     }
     this.fetchData = this.fetchData.bind(this);
     this.updateStarsArray = this.updateStarsArray.bind(this);
@@ -106,14 +123,19 @@ class App extends Component {
   render() {
     return (
       <div className={style.appContainer}>
-        <BreadCrumbs designer={this.state.designer}/>
+        <BreadCrumbs designer={this.state._designer}/>
         <div className={style.productDescriptionContainer}>
           <ImageCarousel imageUrls={[this.state.imageUrlsColor1, this.state.imageUrlsColor2]} imageUrlsIndex={this.state.imageUrlsIndex} selectedImgIndex={this.state.selectedImgIndex} updateSelectedImgIndex={this.updateSelectedImgIndex}/>
-          <EssentialInformation productName={this.state.productName} designer={this.state.designer} price={this.state.price} starsArray={this.state.starsArray} reviews={this.state.reviews} description={this.state.description} fit={this.state.fit} sizes={this.state.sizes} colors={this.state.colors} selectedImg={this.state.selectedImg} colorSelectorArray={this.state.colorSelectorArray} updateImageUrlsIndex={this.updateImageUrlsIndex}/>
+          <EssentialInformation productName={this.state._productName} designer={this.state._designer} price={this.state._price} starsArray={this.state.starsArray} reviews={this.state._reviews} description={this.state._productDescription} fit={this.state._sizeInfoFit} sizes={this.state._sizeInfoList} colors={this.state.colors} selectedImg={this.state.selectedImg} colorSelectorArray={this.state.colorSelectorArray} updateImageUrlsIndex={this.updateImageUrlsIndex}/>
           <RecommendationBar recommendationData={this.state.recommendationData}/>
         </div>
         <div className={style.sizeInfoContainer}>
-          <img className={style.sizeInfoImage} src={'https://s3-us-west-1.amazonaws.com/fec-image-dump/SizeInfo.png'}></img>
+          <MoreDetails _sizeInfoList={this.state._sizeInfoList} _sizeInfoFit={this.state._sizeInfoFit} _sizeInfoOther={this.state._sizeInfoOther} _productDetails={this.state._productDetails} _productDescription={this.state._productDescription} _helpfulInfo={this.state._helpfulInfo}/>
+          <div>
+            <a href=""><h1>{this.state._designer}</h1></a>
+            {this.state._designerDescription}
+          </div>
+          {/* <img className={style.sizeInfoImage} src={'https://s3-us-west-1.amazonaws.com/fec-image-dump/SizeInfo.png'}></img> */}
         </div>
       </div>
     )

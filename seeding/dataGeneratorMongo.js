@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const ProductDescription = require('../database/models');
+const fs = require('fs');
 
 const dressData = require('./dressDataReduced.json');
 
@@ -31,23 +31,52 @@ const seedData = () => {
   return { productName, designer, price, stars, reviews, description, fit, sizes, colors, imageUrlsColor1, imageUrlsColor2 }
 }
 
-// Fills main data array with x number of documents
-const documentsTotal = 100;
-let mainDataArray = [];
-for (let i = 0; i < documentsTotal; i++) {
-  let data = seedData()
-  data.productID = i + 1;
-  mainDataArray.push(data);
+
+//writes 10m data into ./mong10M.json
+const productStream = fs.createWriteStream('./mong10M.json', {flags: 'a'});
+function writeOneMillionTimes(writer, data, encoding, callback) {
+  let i = 0;
+  let max = 10000000;
+  write();
+  function write() {
+    let ok = true;
+    
+    do {
+      if (i === 0) {
+        writer.write('[', encoding);
+      }
+      i++;
+      if (i === max) {
+        // last time!
+        data = seedData();
+        // data.productID = i; // not needed for mongo
+        // data = Object.values(data).join('|') + '\n';
+        data = JSON.stringify(data) + ']';
+        writer.write(data, encoding, callback);
+      } else {
+        let data = seedData();
+        data.productID = i;
+        // data = Object.values(data).join('|') + '\n';
+        data = JSON.stringify(data) + ',';
+        // See if we should continue, or wait.
+        // Don't pass the callback, because we're not done yet.
+        ok = writer.write(data, encoding);
+      }
+    } while (i < max && ok);
+    if (i < max) {
+      // had to stop early!
+      // write some more once it drains
+      writer.once('drain', write);
+    }
+  }
 }
 
+// runs seeding function
+writeOneMillionTimes(productStream, null, 'utf8', () => {
+  mongoose.connection.close();
+  console.log('yay')
+})
 
-// Seeder function creating documents in the DBMS
-const seeder = () => {
-  ProductDescription.create(mainDataArray)
-    .then(() => console.log('seeded'))
-    .then(() => mongoose.connection.close())
-    .catch((err) => console.log(err));
-}
 
-// Runs seeder function
-seeder();
+//import .json file to mongo
+//mongoimport --db productDescription --collection productdescriptions --file mong50.json --jsonArray
