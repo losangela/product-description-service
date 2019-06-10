@@ -6,8 +6,10 @@
   "scripts": {
     "dev:server": "nodemon server/index.js",
     "dev:setup": "webpack -d -w",
-    "seed:PG": "node seeding/dataGeneratorPostgres.js",
-    "seed:Mongo": "node seeding/dataGeneratorMongo.js",
+    "generate:PG": "node seeding/dataGeneratorPostgres.js",
+    "seed:PG": "",
+    "generate:Mongo": "node seeding/dataGeneratorMongo.js",
+    "seed:Mongo": "mongoimport --db productDescription --collection productdescriptions --file seeding/mongTEST.json --jsonArray",
     "test": "jest",
     "test:w": "jest --watchAll",
     "test:c": "jest --coverage",

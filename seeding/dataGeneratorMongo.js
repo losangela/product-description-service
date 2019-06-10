@@ -33,7 +33,7 @@ const seedData = () => {
 
 
 //writes 10m data into ./mong10M.json
-const productStream = fs.createWriteStream('./mong10M.json', {flags: 'a'});
+const productStream = fs.createWriteStream('./seeding/mongTEST.json', {flags: 'a'});
 function writeOneMillionTimes(writer, data, encoding, callback) {
   let i = 0;
   let max = 10000000;
@@ -74,9 +74,9 @@ function writeOneMillionTimes(writer, data, encoding, callback) {
 // runs seeding function
 writeOneMillionTimes(productStream, null, 'utf8', () => {
   mongoose.connection.close();
-  console.log('yay')
+  console.log('yay mongo')
 })
 
 
 //import .json file to mongo
-//mongoimport --db productDescription --collection productdescriptions --file mong50.json --jsonArray
+//mongoimport --db productDescription --collection productdescriptions --file ./seeding/mong10M.json --jsonArray

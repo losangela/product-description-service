@@ -30,7 +30,7 @@ const seedData = () => {
 }
 
 // Seeds into post10M.csv
-const productStream = fs.createWriteStream('./post10M.csv', {flags: 'a'});
+const productStream = fs.createWriteStream('./seeding/post10M.csv', {flags: 'a'});
 function writeOneMillionTimes(writer, data, encoding, callback) {
   let i = 0;
   let max = 10000000;
