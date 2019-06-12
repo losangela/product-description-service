@@ -29,7 +29,7 @@ const productDescriptionSchema = new mongoose.Schema({
   colors: String,
   imageUrlsColor1: String,
   imageUrlsColor2: String,
-  productID: String
+  productID: { type: Number, index: true }
 });
 
 // Connecting the Product Descriptions Schema to the database

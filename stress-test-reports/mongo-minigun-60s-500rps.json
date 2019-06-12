@@ -1,0 +1,254 @@
+{
+  "intermediate": [
+    {
+      "timestamp": "2019-06-11T18:35:16.581Z",
+      "scenariosCreated": 4910,
+      "scenariosCompleted": 1150,
+      "requestsCompleted": 1150,
+      "rps": {
+        "mean": 489.74,
+        "count": 4908
+      },
+      "latency": {
+        "min": 71.65,
+        "max": 2924.14,
+        "median": 1336.49,
+        "p95": 2455.69,
+        "p99": 2628.61
+      },
+      "scenarioDuration": {
+        "min": 96.94,
+        "max": 2925.61,
+        "median": 1387.77,
+        "p95": 2502.81,
+        "p99": 2750.47
+      },
+      "errors": {
+        "ECONNRESET": 758,
+        "ECONNREFUSED": 750
+      },
+      "codes": {
+        "200": 1150
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T18:35:26.562Z",
+      "scenariosCreated": 5038,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "rps": {
+        "mean": 504.9,
+        "count": 5038
+      },
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "errors": {
+        "ECONNREFUSED": 238,
+        "ECONNRESET": 421,
+        "ETIMEDOUT": 1934,
+        "ESOCKETTIMEDOUT": 57
+      },
+      "codes": {},
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T18:35:36.565Z",
+      "scenariosCreated": 4379,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "rps": {
+        "mean": 437.82,
+        "count": 4379
+      },
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "errors": {
+        "ECONNRESET": 16,
+        "ETIMEDOUT": 4417,
+        "ESOCKETTIMEDOUT": 205
+      },
+      "codes": {},
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T18:35:46.567Z",
+      "scenariosCreated": 2955,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "rps": {
+        "mean": 295.47,
+        "count": 2955
+      },
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "errors": {
+        "ETIMEDOUT": 3594,
+        "ESOCKETTIMEDOUT": 785
+      },
+      "codes": {},
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T18:35:56.573Z",
+      "scenariosCreated": 5523,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "rps": {
+        "mean": 552.02,
+        "count": 5523
+      },
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "errors": {
+        "ESOCKETTIMEDOUT": 508,
+        "ETIMEDOUT": 2447
+      },
+      "codes": {},
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T18:36:06.573Z",
+      "scenariosCreated": 3819,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "rps": {
+        "mean": 381.92,
+        "count": 3819
+      },
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "errors": {
+        "ETIMEDOUT": 5359,
+        "ESOCKETTIMEDOUT": 164
+      },
+      "codes": {},
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T18:36:16.573Z",
+      "scenariosCreated": 3376,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "rps": {
+        "mean": 337.79,
+        "count": 3378
+      },
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "errors": {
+        "ETIMEDOUT": 3731,
+        "ESOCKETTIMEDOUT": 59,
+        "ECONNRESET": 232
+      },
+      "codes": {},
+      "matches": 0
+    }
+  ],
+  "aggregate": {
+    "timestamp": "2019-06-11T18:36:21.391Z",
+    "scenariosCreated": 30000,
+    "scenariosCompleted": 1150,
+    "requestsCompleted": 1150,
+    "rps": {
+      "mean": 400.91,
+      "count": 30000
+    },
+    "latency": {
+      "min": 71.65,
+      "max": 2924.14,
+      "median": 1336.49,
+      "p95": 2487.12,
+      "p99": 2716.74
+    },
+    "scenarioDuration": {
+      "min": 96.94,
+      "max": 2925.61,
+      "median": 1384.13,
+      "p95": 2499.76,
+      "p99": 2668.79
+    },
+    "errors": {
+      "ECONNRESET": 1427,
+      "ECONNREFUSED": 988,
+      "ETIMEDOUT": 24657,
+      "ESOCKETTIMEDOUT": 1778
+    },
+    "codes": {
+      "200": 1150
+    },
+    "matches": 0
+  }
+}

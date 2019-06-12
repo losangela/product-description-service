@@ -1,0 +1,207 @@
+{
+  "intermediate": [
+    {
+      "timestamp": "2019-06-11T18:31:04.504Z",
+      "scenariosCreated": 499,
+      "scenariosCompleted": 499,
+      "requestsCompleted": 499,
+      "rps": {
+        "mean": 49.86,
+        "count": 499
+      },
+      "latency": {
+        "min": 3.21,
+        "max": 63.41,
+        "median": 4.87,
+        "p95": 14.7,
+        "p99": 32.76
+      },
+      "scenarioDuration": {
+        "min": 3.9,
+        "max": 102.27,
+        "median": 5.96,
+        "p95": 21.41,
+        "p99": 50.44
+      },
+      "errors": {},
+      "codes": {
+        "200": 499
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T18:31:14.501Z",
+      "scenariosCreated": 500,
+      "scenariosCompleted": 500,
+      "requestsCompleted": 500,
+      "rps": {
+        "mean": 50.02,
+        "count": 500
+      },
+      "latency": {
+        "min": 2.95,
+        "max": 26.64,
+        "median": 4.21,
+        "p95": 8.14,
+        "p99": 14.63
+      },
+      "scenarioDuration": {
+        "min": 3.66,
+        "max": 27.58,
+        "median": 5.1,
+        "p95": 9.81,
+        "p99": 17.68
+      },
+      "errors": {},
+      "codes": {
+        "200": 500
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T18:31:24.499Z",
+      "scenariosCreated": 500,
+      "scenariosCompleted": 500,
+      "requestsCompleted": 500,
+      "rps": {
+        "mean": 50.02,
+        "count": 500
+      },
+      "latency": {
+        "min": 2.84,
+        "max": 26.94,
+        "median": 3.63,
+        "p95": 5.58,
+        "p99": 8.42
+      },
+      "scenarioDuration": {
+        "min": 3.46,
+        "max": 27.95,
+        "median": 4.39,
+        "p95": 6.55,
+        "p99": 9.36
+      },
+      "errors": {},
+      "codes": {
+        "200": 500
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T18:31:34.505Z",
+      "scenariosCreated": 500,
+      "scenariosCompleted": 500,
+      "requestsCompleted": 500,
+      "rps": {
+        "mean": 49.97,
+        "count": 500
+      },
+      "latency": {
+        "min": 2.86,
+        "max": 14.45,
+        "median": 3.78,
+        "p95": 5.94,
+        "p99": 8.22
+      },
+      "scenarioDuration": {
+        "min": 3.47,
+        "max": 17.54,
+        "median": 4.54,
+        "p95": 7.02,
+        "p99": 10.13
+      },
+      "errors": {},
+      "codes": {
+        "200": 500
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T18:31:44.499Z",
+      "scenariosCreated": 500,
+      "scenariosCompleted": 500,
+      "requestsCompleted": 500,
+      "rps": {
+        "mean": 50.02,
+        "count": 500
+      },
+      "latency": {
+        "min": 2.8,
+        "max": 24.84,
+        "median": 3.63,
+        "p95": 5.62,
+        "p99": 13.18
+      },
+      "scenarioDuration": {
+        "min": 3.39,
+        "max": 34.9,
+        "median": 4.33,
+        "p95": 6.75,
+        "p99": 16.99
+      },
+      "errors": {},
+      "codes": {
+        "200": 500
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T18:31:54.500Z",
+      "scenariosCreated": 500,
+      "scenariosCompleted": 500,
+      "requestsCompleted": 500,
+      "rps": {
+        "mean": 49.99,
+        "count": 500
+      },
+      "latency": {
+        "min": 2.84,
+        "max": 10.01,
+        "median": 3.54,
+        "p95": 5.32,
+        "p99": 6.22
+      },
+      "scenarioDuration": {
+        "min": 3.43,
+        "max": 10.86,
+        "median": 4.24,
+        "p95": 6.08,
+        "p99": 7.15
+      },
+      "errors": {},
+      "codes": {
+        "200": 500
+      },
+      "matches": 0
+    }
+  ],
+  "aggregate": {
+    "timestamp": "2019-06-11T18:31:55.010Z",
+    "scenariosCreated": 3000,
+    "scenariosCompleted": 3000,
+    "requestsCompleted": 3000,
+    "rps": {
+      "mean": 49.58,
+      "count": 3000
+    },
+    "latency": {
+      "min": 2.8,
+      "max": 63.41,
+      "median": 3.86,
+      "p95": 6.56,
+      "p99": 14.29
+    },
+    "scenarioDuration": {
+      "min": 3.39,
+      "max": 102.27,
+      "median": 4.58,
+      "p95": 8.04,
+      "p99": 17.07
+    },
+    "errors": {},
+    "codes": {
+      "200": 3000
+    },
+    "matches": 0
+  }
+}

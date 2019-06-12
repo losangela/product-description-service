@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Minigun report</title>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.min.js' charset='utf-8'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.6.0/metricsgraphics.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.6.0/metricsgraphics.min.js"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+  <link href='https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js" charset="utf-8"></script>
+
+  <style>
+  body, p, li {
+    font-family: sans-serif;
+    font-size: 10pt;
+  }
+
+  h1 {
+    font-size: 18pt;
+    font-weight: bold;
+  }
+
+  #errorsContainer > p {
+    color: #009900;
+  }
+
+  #footer {
+    padding: 1em;
+    font-size: 0.8em;
+    color: #999;
+    text-align: center;
+    margin-top: 1em;
+    background-color: #eee;
+  }
+  #editor {
+    font-size: 8pt;
+    height: 20em;
+  }
+  </style>
+
+  <script>
+  window.Report = {
+  "intermediate": [
+    {
+      "timestamp": "2019-06-12T17:55:36.356Z",
+      "scenariosCreated": 4322,
+      "scenariosCompleted": 3873,
+      "requestsCompleted": 3873,
+      "rps": {
+        "mean": 431.19,
+        "count": 4320
+      },
+      "latency": {
+        "min": 263.37,
+        "max": 1669.83,
+        "median": 771.68,
+        "p95": 1166.29,
+        "p99": 1350.31
+      },
+      "scenarioDuration": {
+        "min": 298.81,
+        "max": 1671,
+        "median": 772.65,
+        "p95": 1177.97,
+        "p99": 1376.57
+      },
+      "errors": {
+        "ECONNRESET": 7
+      },
+      "codes": {
+        "200": 3873
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-12T17:55:46.350Z",
+      "scenariosCreated": 4368,
+      "scenariosCompleted": 4770,
+      "requestsCompleted": 4770,
+      "rps": {
+        "mean": 437.08,
+        "count": 4368
+      },
+      "latency": {
+        "min": 4.89,
+        "max": 4412.64,
+        "median": 56.18,
+        "p95": 1281.19,
+        "p99": 1772.63
+      },
+      "scenarioDuration": {
+        "min": 8.47,
+        "max": 4413.84,
+        "median": 58.39,
+        "p95": 1264.04,
+        "p99": 1752.69
+      },
+      "errors": {
+        "ECONNRESET": 22
+      },
+      "codes": {
+        "200": 4770
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-12T17:55:56.352Z",
+      "scenariosCreated": 3038,
+      "scenariosCompleted": 3024,
+      "requestsCompleted": 3024,
+      "rps": {
+        "mean": 303.78,
+        "count": 3038
+      },
+      "latency": {
+        "min": 5.28,
+        "max": 252.17,
+        "median": 69.4,
+        "p95": 169.89,
+        "p99": 215.99
+      },
+      "scenarioDuration": {
+        "min": 8.27,
+        "max": 265.15,
+        "median": 73.69,
+        "p95": 179.78,
+        "p99": 220.89
+      },
+      "errors": {},
+      "codes": {
+        "200": 3024
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-12T17:56:06.459Z",
+      "scenariosCreated": 3800,
+      "scenariosCompleted": 3824,
+      "requestsCompleted": 3824,
+      "rps": {
+        "mean": 375.97,
+        "count": 3800
+      },
+      "latency": {
+        "min": 4.68,
+        "max": 230.15,
+        "median": 41.03,
+        "p95": 171.94,
+        "p99": 218.17
+      },
+      "scenarioDuration": {
+        "min": 7.46,
+        "max": 232.27,
+        "median": 49.6,
+        "p95": 171.36,
+        "p99": 220.76
+      },
+      "errors": {},
+      "codes": {
+        "200": 3824
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-12T17:56:16.605Z",
+      "scenariosCreated": 4481,
+      "scenariosCompleted": 4478,
+      "requestsCompleted": 4478,
+      "rps": {
+        "mean": 441.69,
+        "count": 4481
+      },
+      "latency": {
+        "min": 3.96,
+        "max": 281.32,
+        "median": 23.04,
+        "p95": 122.64,
+        "p99": 198.65
+      },
+      "scenarioDuration": {
+        "min": 6.3,
+        "max": 281.97,
+        "median": 27.46,
+        "p95": 122.99,
+        "p99": 209.11
+      },
+      "errors": {},
+      "codes": {
+        "200": 4478
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-12T17:56:26.603Z",
+      "scenariosCreated": 4838,
+      "scenariosCompleted": 4840,
+      "requestsCompleted": 4840,
+      "rps": {
+        "mean": 483.94,
+        "count": 4838
+      },
+      "latency": {
+        "min": 3.88,
+        "max": 281.62,
+        "median": 23.51,
+        "p95": 70.67,
+        "p99": 159.3
+      },
+      "scenarioDuration": {
+        "min": 5.88,
+        "max": 286.4,
+        "median": 27.95,
+        "p95": 80.19,
+        "p99": 192.82
+      },
+      "errors": {},
+      "codes": {
+        "200": 4840
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-12T17:56:36.750Z",
+      "scenariosCreated": 4023,
+      "scenariosCompleted": 4019,
+      "requestsCompleted": 4019,
+      "rps": {
+        "mean": 396.49,
+        "count": 4023
+      },
+      "latency": {
+        "min": 4.7,
+        "max": 310.23,
+        "median": 20.86,
+        "p95": 81.12,
+        "p99": 213.77
+      },
+      "scenarioDuration": {
+        "min": 7.74,
+        "max": 315.31,
+        "median": 24.99,
+        "p95": 90.34,
+        "p99": 274.36
+      },
+      "errors": {},
+      "codes": {
+        "200": 4019
+      },
+      "matches": 0
+    }
+  ],
+  "aggregate": {
+    "timestamp": "2019-06-12T17:56:39.849Z",
+    "scenariosCreated": 30000,
+    "scenariosCompleted": 29971,
+    "requestsCompleted": 29971,
+    "rps": {
+      "mean": 408.11,
+      "count": 30000
+    },
+    "latency": {
+      "min": 3.88,
+      "max": 4412.64,
+      "median": 28.99,
+      "p95": 854.26,
+      "p99": 1231.98
+    },
+    "scenarioDuration": {
+      "min": 5.88,
+      "max": 4413.84,
+      "median": 35.63,
+      "p95": 843.84,
+      "p99": 1265.58
+    },
+    "errors": {
+      "ECONNRESET": 29
+    },
+    "codes": {
+      "200": 29971
+    },
+    "matches": 0
+  }
+};
+  </script>
+
+  <style>
+      h1 {
+        line-height: 200%;
+      }
+
+      body {
+          background-color: #fcfcfc;
+      }
+
+      .container {
+          width: 90%;
+          min-width: 960px;
+      }
+  </style>
+
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="row" id="header">
+  <div class="col-md-4 col-md-offset-4">
+    <pre style="font-size: 5pt; background-color: #fcfcfc; border: none;">
+           _       _                                                 _
+ _ __ ___ (_)_ __ (_) __ _ _   _ _ __      _ __ ___ _ __   ___  _ __| |_
+| '_ ` _ \| | '_ \| |/ _` | | | | '_ \    | '__/ _ \ '_ \ / _ \| '__| __|
+| | | | | | | | | | | (_| | |_| | | | |   | | |  __/ |_) | (_) | |  | |_
+|_| |_| |_|_|_| |_|_|\__, |\__,_|_| |_|   |_|  \___| .__/ \___/|_|   \__|
+                     |___/                         |_|
+
+    </pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="text-center" id="page-title">Test run on <span id="timestamp">date</span></h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <p><strong>Summary</strong></p>
+    <table class="table table-bordered table-hover table-condensed">
+      <tbody>
+        <tr>
+          <td>Test duration</td>
+          <td><span id="testDuration">0</span> sec</td>
+        </tr>
+        <tr>
+          <td>Scenarios created</td>
+          <td><span id="scenariosCreated">0</span></td>
+        </tr>
+
+        <tr>
+          <td>Requests completed</td>
+          <td><span id="scenariosCompleted">0</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="col-md-4">
+    <div id="codesContainer">
+      <strong>Codes</strong>
+
+      <p></p>
+
+      <table class="table table-bordered table-hover table-condensed" id="codes">
+      </table>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div id="errorsContainer">
+      <strong>Errors</strong>
+
+      <p></p>
+
+      <table class="table table-bordered table-hover table-condensed" id="errors">
+      </table>
+    </div>
+  </div>
+</div> <!-- /.row -->
+
+<div class="row">
+  <div class="text-center col-md-12">
+    <h2>Charts</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="latency-histogram text-center col-md-6"></div>
+  <div class="latency text-center col-md-6"></div>
+
+  <!--
+  <div id="latency-buttons">
+    <button class="btn btn-xs btn-default">min</button>
+    <button class="btn btn-xs btn-default">max</button>
+    <button class="btn btn-xs btn-default">median</button>
+    <button class="btn btn-xs btn-default">p95</button>
+  </div>
+  -->
+
+</div>
+
+<div class="latency-legend"></div>
+
+<div class="row">
+
+</div>
+
+<div class="row">
+  <div class="rps-mean text-center col-md-6"></div>
+  <div class="rps-count text-center col-md-6"></div>
+  <div class="codes-line text-center col-md-6"></div>
+  <div class="errors-line text-center col-md-6"></div>
+</div>
+
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h3 class="text-center">Raw report data</h3>
+    <p>This is the raw JSON stats output that the report was generated from.</p>
+    <div id="editor">
+    </div>
+  </div>
+</div>
+
+<script>
+var editor = ace.edit("editor");
+editor.getSession().setMode("ace/mode/javascript");
+editor.setValue(JSON.stringify(Report, null, 2));
+editor.gotoLine(1);editor.setHighlightActiveLine(false);
+
+var l = _;
+
+$('#timestamp').html(moment(Report.aggregate.timestamp).format('DD MMM YYYY HH:mm:SS'));
+$('#testDuration').html(l.size(Report.intermediate) * 10);
+$('#scenariosCompleted').html(Report.aggregate.scenariosCompleted);
+$('#scenariosCreated').html(Report.aggregate.scenariosCreated);
+
+if (l.size(Report.aggregate.codes) > 0) {
+  l.each(Report.aggregate.codes, function(count, code) {
+    var anchor = '';
+    if (code >= 100 && code < 200) {
+      anchor = '#1xx_Informational';
+    } else if (code >= 200 && code < 300) {
+      anchor = '#2xx_Success';
+    } else if (code >= 300 && code < 400) {
+      anchor = '#3xx_Redirection';
+    } else if (code >= 400 && code < 500) {
+      anchor = '#4xx_Client_Error';
+    } else if (code >= 500 && code < 600) {
+      anchor = '#5xx_Server_Error';
+    }
+
+    var $a = $('<a>' + code + '</a>').attr('href', 'https://en.wikipedia.org/wiki/List_of_HTTP_status_codes' + anchor);
+    var $td = $('<td></td>').append($a);
+    var $el = $('<tr></tr>')
+      .append($td)
+      .append($('<td>' + count + '</td>'))
+      .appendTo($('#codes'));
+  });
+} else {
+  $('#codesContainer').hide();
+}
+
+if (l.size(Report.aggregate.errors) > 0) {
+  l.each(Report.aggregate.errors, function(count, code) {
+    var $el = $('<tr></tr>')
+      .append($('<td>' + code + '</td>'))
+      .append($('<td>' + count + '</td>'))
+      .appendTo($('#errors'));
+  });
+} else {
+  $('#errorsContainer > p').html('&#10004; Test completed without network or OS errors.');
+}
+
+var histogramData = l.map(Report.aggregate.latency, function(v, k) { return {bin: k, value: v} });
+
+MG.data_graphic({
+  chart_type: 'bar',
+  x_label: 'Percentile',
+  y_label: '(ms)',
+  animate_on_load: true,
+  title: 'Overall Latency Distribution',
+  description: 'Distribution of all observed response latencies',
+  target: '.latency-histogram',
+  data: histogramData,
+  x_accessor: 'bin',
+  y_accessor: 'value',
+  binned: true,
+  height: 250,
+  interpolate: 'monotone',
+  padding_percentage: 0,
+  bar_orientation: 'vertical'
+});
+
+var chartData = l.map(
+  window.Report.intermediate,
+  function(o,i) {
+    return {
+      timestamp: i*10+10,
+
+      rpsMean: o.rps.mean,
+      rpsCount: o.rps.count,
+
+      latencyMax: o.latency.max,
+      latencyp99: o.latency.p99,
+      latencyp95: o.latency.p95,
+      latencyMedian: o.latency.median,
+      latencyMin: o.latency.min
+    }
+  });
+
+//
+// Response codes
+//
+
+if (l.size(Report.aggregate.codes) > 0) {
+  var codesData = l.foldl(Report.intermediate, function(acc, o, i) {
+    var res = {};
+    res.timestamp = i*10+10;
+    l.each(o.codes, function(count, code) {
+      res[code] = count;
+    });
+    acc.push(res);
+    return acc;
+  }, []);
+  var uniqueCodes = l.foldl(Report.intermediate, function(acc, o) {
+    l.each(o.codes, function(count, code) {
+      if (l.indexOf(acc, code) === -1) {
+        acc.push(code);
+      }
+    });
+    return acc;
+  }, []);
+
+  MG.data_graphic({
+    x_label: 'Time',
+    y_label: 'Count',
+    title: 'HTTP codes',
+    description: 'Occurence of HTTP response codes',
+    target: '.codes-line',
+    data: codesData,
+    x_accessor: 'timestamp',
+    y_accessor: uniqueCodes,
+    legend: uniqueCodes,
+    right: 50,
+    chart_type: 'line',
+    area: false
+  });
+}
+
+//
+// Errors
+//
+
+if (l.size(Report.aggregate.errors) > 0) {
+  var errorData = l.foldl(Report.intermediate, function(acc, o, i) {
+    var res = {};
+    res.timestamp = i*10+10;
+    l.each(o.errors, function(count, name) {
+      res[name] = count;
+    });
+    acc.push(res);
+    return acc;
+  }, []);
+  var uniqueErrors = l.foldl(Report.intermediate, function(acc, o) {
+    l.each(o.errors, function(count, name) {
+      if (l.indexOf(acc, name) === -1) {
+        acc.push(name);
+      }
+    });
+    return acc;
+  }, []);
+
+  MG.data_graphic({
+    title: 'Error Codes',
+    description: 'Occurence of error codes',
+    target: '.errors-line',
+    data: errorData,
+    x_accessor: 'timestamp',
+    y_accessor: uniqueErrors,
+
+    chart_type: 'line',
+    area: false
+  });
+
+}
+
+//
+// Latency
+//
+MG.data_graphic({
+  chart_type: 'line',
+  x_label: 'Time',
+  y_label: '(ms)',
+  animate_on_load: true,
+  area: false,
+  title: "Latency At Intervals",
+  description: "Latency values at different points during the test run",
+  data: chartData,
+  target: '.latency',
+  width: 480,
+  x_accessor: 'timestamp',
+  y_accessor: ['latencyMin', 'latencyMedian', 'latencyp95', 'latencyMax'],
+  legend: ['min', 'p50', 'p95', 'max'],
+  //legend_target: '.latency-legend',
+  right: 50,
+  interpolate: 'monotone',
+  mouseover: function(d, i) {
+  }
+});
+
+// MG.data_graphic({
+//   chart_type: 'bar',
+//   x_label: 'Time',
+//   y_label: '(ms)',
+//   animate_on_load: true,
+//   area: false,
+//   title: "Latency At Intervals",
+//   description: "Latency values at different points during the test run",
+//   data: chartData,
+//   target: '.latency',
+//   width: 480,
+//   x_accessor: 'timestamp',
+//   y_accessor: 'latencyMedian',
+//   legend: 'p50',
+//   //legend_target: '.latency-legend',
+//   right: 50,
+//   interpolate: 'monotone',
+//   binned: true,
+//   bar_orientation: 'vertical',
+//   mouseover: function(d, i) {
+//   }
+// });
+
+MG.data_graphic({
+  animate_on_load: true,
+  area: false,
+  y_label: 'Count',
+  x_label: 'Time',
+  title: 'Mean RPS',
+  description: 'Mean requests per second',
+  data: chartData,
+  target: '.rps-mean',
+  x_accessor: 'timestamp',
+  y_accessor: ['rpsMean'],
+  interpolate: 'monotone'
+});
+
+MG.data_graphic({
+  animate_on_load: true,
+  area: false,
+  y_label: 'Count',
+  x_label: 'Time',
+  title: 'RPS Count',
+  description: 'Count of requests per second',
+  data: chartData,
+  target: '.rps-count',
+  x_accessor: 'timestamp',
+  y_accessor: ['rpsCount'],
+  interpolate: 'monotone'
+});
+</script>
+<div id="footer">
+  <footer>This report was created with <a href="http://minigun.io">Minigun</a> - free open-source load-testing for HTTP and WebSockets</footer>
+  <img src="http://api.stathat.com/c?ukey=MTA1ODQgp-mNNV_cZKz2-5phheSiNg~~&key=L5EzmTIp73VFSn-ePfmCySA1QTNY&count=1" style="display:none;" width="1" height="1">
+</div>
+</body>
+</html>

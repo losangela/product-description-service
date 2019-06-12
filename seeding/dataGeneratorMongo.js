@@ -80,3 +80,11 @@ writeOneMillionTimes(productStream, null, 'utf8', () => {
 
 //import .json file to mongo
 //mongoimport --db productDescription --collection productdescriptions --file ./seeding/mong10M.json --jsonArray
+//minigun quick -d 60 -r 10 http://localhost:3002/productDescription/findOneRandom/
+//minigun quick -d 60 -r 50 http://localhost:3002/productDescription/findOneRandom/
+//minigun quick -d 60 -r 100 http://localhost:3002/productDescription/findOneRandom/
+//minigun quick -d 60 -r 500 http://localhost:3002/productDescription/findOneRandom/
+//minigun quick -d 60 -r 1000 http://localhost:3002/productDescription/findOneRandom/
+
+
+//30 seconds of testing 5 requests per second

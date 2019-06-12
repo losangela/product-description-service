@@ -1,0 +1,468 @@
+{
+  "intermediate": [
+    {
+      "timestamp": "2019-06-11T21:20:50.597Z",
+      "scenariosCreated": 5194,
+      "scenariosCompleted": 2797,
+      "requestsCompleted": 2797,
+      "rps": {
+        "mean": 518.02,
+        "count": 5192
+      },
+      "latency": {
+        "min": 88.2,
+        "max": 7222.04,
+        "median": 1354.69,
+        "p95": 3914.71,
+        "p99": 5600.93
+      },
+      "scenarioDuration": {
+        "min": 106.94,
+        "max": 7224.78,
+        "median": 1328.21,
+        "p95": 3898.79,
+        "p99": 4864.9
+      },
+      "errors": {
+        "ECONNRESET": 22
+      },
+      "codes": {
+        "200": 2797
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T21:21:00.589Z",
+      "scenariosCreated": 5075,
+      "scenariosCompleted": 3678,
+      "requestsCompleted": 3678,
+      "rps": {
+        "mean": 507.94,
+        "count": 5075
+      },
+      "latency": {
+        "min": 602.75,
+        "max": 9988.69,
+        "median": 2993.69,
+        "p95": 7559.68,
+        "p99": 9578.85
+      },
+      "scenarioDuration": {
+        "min": 603.93,
+        "max": 9990.24,
+        "median": 3028.45,
+        "p95": 7638.36,
+        "p99": 9559.16
+      },
+      "errors": {
+        "ECONNRESET": 67,
+        "ETIMEDOUT": 1115,
+        "ESOCKETTIMEDOUT": 20
+      },
+      "codes": {
+        "200": 3678
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T21:21:10.589Z",
+      "scenariosCreated": 5009,
+      "scenariosCompleted": 4704,
+      "requestsCompleted": 4704,
+      "rps": {
+        "mean": 500.9,
+        "count": 5009
+      },
+      "latency": {
+        "min": 432.61,
+        "max": 9436.84,
+        "median": 2130.74,
+        "p95": 8871.7,
+        "p99": 9153.75
+      },
+      "scenarioDuration": {
+        "min": 433.7,
+        "max": 9439.71,
+        "median": 2139.79,
+        "p95": 8936.13,
+        "p99": 9233.94
+      },
+      "errors": {
+        "ETIMEDOUT": 1130,
+        "ESOCKETTIMEDOUT": 45,
+        "ECONNRESET": 90
+      },
+      "codes": {
+        "200": 4704
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T21:21:20.600Z",
+      "scenariosCreated": 5160,
+      "scenariosCompleted": 4270,
+      "requestsCompleted": 4270,
+      "rps": {
+        "mean": 515.44,
+        "count": 5160
+      },
+      "latency": {
+        "min": 429.14,
+        "max": 9703.28,
+        "median": 2203.37,
+        "p95": 6865.68,
+        "p99": 9298.6
+      },
+      "scenarioDuration": {
+        "min": 431.43,
+        "max": 9704.7,
+        "median": 2160.71,
+        "p95": 6992.73,
+        "p99": 9144.29
+      },
+      "errors": {
+        "ETIMEDOUT": 458,
+        "ECONNRESET": 273,
+        "ESOCKETTIMEDOUT": 10
+      },
+      "codes": {
+        "200": 4270
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T21:21:30.597Z",
+      "scenariosCreated": 4133,
+      "scenariosCompleted": 3673,
+      "requestsCompleted": 3673,
+      "rps": {
+        "mean": 413.44,
+        "count": 4133
+      },
+      "latency": {
+        "min": 6.81,
+        "max": 9398.8,
+        "median": 1090.76,
+        "p95": 6723.92,
+        "p99": 8811.83
+      },
+      "scenarioDuration": {
+        "min": 10.75,
+        "max": 9399.92,
+        "median": 1041.03,
+        "p95": 6579.18,
+        "p99": 9006.31
+      },
+      "errors": {
+        "ETIMEDOUT": 279,
+        "ECONNRESET": 35,
+        "ESOCKETTIMEDOUT": 4,
+        "EADDRNOTAVAIL": 867
+      },
+      "codes": {
+        "200": 3673
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T21:21:40.603Z",
+      "scenariosCreated": 4355,
+      "scenariosCompleted": 3749,
+      "requestsCompleted": 3749,
+      "rps": {
+        "mean": 435.25,
+        "count": 4355
+      },
+      "latency": {
+        "min": 348.06,
+        "max": 9942.56,
+        "median": 1289.59,
+        "p95": 4779.98,
+        "p99": 9767.91
+      },
+      "scenarioDuration": {
+        "min": 351.32,
+        "max": 9945.69,
+        "median": 1304.2,
+        "p95": 4556.24,
+        "p99": 9751.03
+      },
+      "errors": {
+        "ETIMEDOUT": 303,
+        "ECONNRESET": 367,
+        "ESOCKETTIMEDOUT": 6
+      },
+      "codes": {
+        "200": 3749
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T21:21:50.599Z",
+      "scenariosCreated": 4559,
+      "scenariosCompleted": 4097,
+      "requestsCompleted": 4097,
+      "rps": {
+        "mean": 456.1,
+        "count": 4559
+      },
+      "latency": {
+        "min": 516.17,
+        "max": 7340.81,
+        "median": 1171.73,
+        "p95": 3211.08,
+        "p99": 5077.56
+      },
+      "scenarioDuration": {
+        "min": 518.69,
+        "max": 7341.86,
+        "median": 1184.78,
+        "p95": 3157.9,
+        "p99": 5133.11
+      },
+      "errors": {
+        "ETIMEDOUT": 420,
+        "ECONNRESET": 385,
+        "ESOCKETTIMEDOUT": 3,
+        "EPIPE": 1
+      },
+      "codes": {
+        "200": 4097
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T21:22:00.611Z",
+      "scenariosCreated": 4703,
+      "scenariosCompleted": 4192,
+      "requestsCompleted": 4192,
+      "rps": {
+        "mean": 469.78,
+        "count": 4703
+      },
+      "latency": {
+        "min": 463.97,
+        "max": 8961.91,
+        "median": 952.32,
+        "p95": 3195.35,
+        "p99": 5552.28
+      },
+      "scenarioDuration": {
+        "min": 470.9,
+        "max": 8962.97,
+        "median": 974.84,
+        "p95": 3141.66,
+        "p99": 4808.42
+      },
+      "errors": {
+        "ETIMEDOUT": 28,
+        "ECONNRESET": 10,
+        "EADDRNOTAVAIL": 2
+      },
+      "codes": {
+        "200": 4192
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T21:22:10.597Z",
+      "scenariosCreated": 5079,
+      "scenariosCompleted": 4973,
+      "requestsCompleted": 4973,
+      "rps": {
+        "mean": 508.64,
+        "count": 5079
+      },
+      "latency": {
+        "min": 8.73,
+        "max": 9202.44,
+        "median": 1170.2,
+        "p95": 4517.51,
+        "p99": 6525.58
+      },
+      "scenarioDuration": {
+        "min": 13.51,
+        "max": 9209.23,
+        "median": 1154.92,
+        "p95": 4499.27,
+        "p99": 6164.44
+      },
+      "errors": {
+        "ECONNRESET": 32,
+        "ETIMEDOUT": 501,
+        "ESOCKETTIMEDOUT": 5,
+        "EADDRNOTAVAIL": 176
+      },
+      "codes": {
+        "200": 4973
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T21:22:20.598Z",
+      "scenariosCreated": 4581,
+      "scenariosCompleted": 3419,
+      "requestsCompleted": 3419,
+      "rps": {
+        "mean": 458.04,
+        "count": 4581
+      },
+      "latency": {
+        "min": 7.8,
+        "max": 9241.09,
+        "median": 1025.22,
+        "p95": 2697.78,
+        "p99": 8444.42
+      },
+      "scenarioDuration": {
+        "min": 9.83,
+        "max": 9244.65,
+        "median": 1001.62,
+        "p95": 2642.17,
+        "p99": 8425.16
+      },
+      "errors": {
+        "EADDRNOTAVAIL": 258,
+        "ETIMEDOUT": 362,
+        "ECONNRESET": 19,
+        "ESOCKETTIMEDOUT": 13
+      },
+      "codes": {
+        "200": 3419
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T21:22:30.605Z",
+      "scenariosCreated": 4935,
+      "scenariosCompleted": 4132,
+      "requestsCompleted": 4132,
+      "rps": {
+        "mean": 493.2,
+        "count": 4935
+      },
+      "latency": {
+        "min": 542.91,
+        "max": 7045.62,
+        "median": 1339.98,
+        "p95": 3731.02,
+        "p99": 5455.33
+      },
+      "scenarioDuration": {
+        "min": 544.17,
+        "max": 7061.86,
+        "median": 1301.76,
+        "p95": 3732.89,
+        "p99": 5572.03
+      },
+      "errors": {
+        "ETIMEDOUT": 127,
+        "ESOCKETTIMEDOUT": 5,
+        "ECONNRESET": 936
+      },
+      "codes": {
+        "200": 4132
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T21:22:40.609Z",
+      "scenariosCreated": 6831,
+      "scenariosCompleted": 4379,
+      "requestsCompleted": 4379,
+      "rps": {
+        "mean": 682.79,
+        "count": 6831
+      },
+      "latency": {
+        "min": 577.69,
+        "max": 5892.69,
+        "median": 3083.84,
+        "p95": 4884.52,
+        "p99": 5082.36
+      },
+      "scenarioDuration": {
+        "min": 578.46,
+        "max": 5896.15,
+        "median": 3003.73,
+        "p95": 4908.35,
+        "p99": 5045.63
+      },
+      "errors": {
+        "ETIMEDOUT": 82,
+        "ECONNRESET": 98
+      },
+      "codes": {
+        "200": 4379
+      },
+      "matches": 0
+    },
+    {
+      "timestamp": "2019-06-11T21:22:50.598Z",
+      "scenariosCreated": 386,
+      "scenariosCompleted": 737,
+      "requestsCompleted": 737,
+      "rps": {
+        "mean": 38.85,
+        "count": 388
+      },
+      "latency": {
+        "min": 146.38,
+        "max": 9570.95,
+        "median": 4399.62,
+        "p95": 8801.48,
+        "p99": 9567.69
+      },
+      "scenarioDuration": {
+        "min": 147.94,
+        "max": 9572.32,
+        "median": 4408.45,
+        "p95": 8834.16,
+        "p99": 9568.82
+      },
+      "errors": {
+        "ETIMEDOUT": 1059,
+        "EADDRNOTAVAIL": 1583
+      },
+      "codes": {
+        "200": 737
+      },
+      "matches": 0
+    }
+  ],
+  "aggregate": {
+    "timestamp": "2019-06-11T21:22:56.403Z",
+    "scenariosCreated": 60000,
+    "scenariosCompleted": 48800,
+    "requestsCompleted": 48800,
+    "rps": {
+      "mean": 441.74,
+      "count": 60000
+    },
+    "latency": {
+      "min": 6.81,
+      "max": 9988.69,
+      "median": 1348.61,
+      "p95": 5368.96,
+      "p99": 8971.01
+    },
+    "scenarioDuration": {
+      "min": 9.83,
+      "max": 9990.24,
+      "median": 1313.17,
+      "p95": 5183.38,
+      "p99": 8819.44
+    },
+    "errors": {
+      "ECONNRESET": 2334,
+      "ETIMEDOUT": 5868,
+      "ESOCKETTIMEDOUT": 111,
+      "EADDRNOTAVAIL": 2886,
+      "EPIPE": 1
+    },
+    "codes": {
+      "200": 48800
+    },
+    "matches": 0
+  }
+}
