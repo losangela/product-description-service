@@ -19,5 +19,8 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 // Router to handle all requests
 app.use('/productDescription', router);
 
+//for stress testing
+app.use('/loaderio-14e8f6484074a22fc8be5a61fc95c476', (req, res, next) => res.send('loaderio-14e8f6484074a22fc8be5a61fc95c476'))
+
 // Verifies and sets port on where server is listening at
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

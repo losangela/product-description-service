@@ -67,7 +67,10 @@ writeOneMillionTimes(productStream, null, 'utf8', () => console.log('yay'))
 
 // //copy into database
 // COPY products("productName",designer,price,stars,reviews,description,fit,sizes,colors,"imageUrlsColor1","imageUrlsColor2","productID")
-// FROM '/Users/AngelaChoi/Desktop/product-description-service/seeding/test2.csv' DELIMITER '|' CSV;
+// FROM '/Users/AngelaChoi/Desktop/product-description-service/seeding/post20.csv' DELIMITER '|' CSV;
 
 //psql -U postgres
 // chmod a+rX /users/AngelaChoi/ /users/AngelaChoi/desktop /users/AngelaChoi/Desktop/product-description-service/seeding/test6.csv
+
+// COPY products("productName",designer,price,stars,reviews,description,fit,sizes,colors,"imageUrlsColor1","imageUrlsColor2","productID")
+// FROM '/home/ubuntu/post10M.csv' DELIMITER '|' CSV;

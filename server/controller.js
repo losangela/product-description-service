@@ -2,10 +2,11 @@
 // const dbHelpers = require('../database/index.js'); //mongodb mongo
 
 // const ProductDescription = require('../db_postgres/index.js'); //sequelizepostgres 
-// const client = require('../db_postgres/index.js'); //pg postgres client connect
-const pool = require('../db_postgres/index.js'); // pg postgres pool
 // const Sequelize = require('sequelize');
 // const Op = Sequelize.Op;
+// const client = require('../db_postgres/index.js'); //pg postgres client connect
+const pool = require('../db_postgres/index.js'); // pg postgres pool
+
 
 module.exports = {
   /*
@@ -14,9 +15,15 @@ module.exports = {
   ========================================================
   */
   findOneRandom: (req, res) => {
-    let id = 9000000 + Math.floor(Math.random() * Math.floor(100000))
+    let id = Math.floor(Math.random() * Math.floor(10000000));
     pool.query(`SELECT * FROM "products" AS "product" WHERE "product"."productID" = ${id};`)
-      .then(data => res.status(200).send(data))
+      .then(data => res.status(200).send(data.rows[0]))
+      .catch(err => res.status(404).send(err));
+  },
+  recommendation: (req, res) => {
+    let id = Math.floor(Math.random() * Math.floor(10000000));
+    pool.query(`SELECT * FROM "products" AS "product" WHERE "product"."productID" >= ${id} AND "product"."productID" < ${id+4};`)
+      .then(data => res.status(200).send(data.rows))
       .catch(err => res.status(404).send('Error'));
   },
   /*
@@ -47,14 +54,10 @@ module.exports = {
   //     .catch(err => res.status(404).send('Error'));
   // },
   // findOneRandom: (req, res) => {
-  //   let id = 9000000 + Math.floor(Math.random() * Math.floor(100000))
+  //   // let id = 9000000 + Math.floor(Math.random() * Math.floor(100000))
+  //   let id =  Math.floor(Math.random() * Math.floor(20));
+
   //   ProductDescription.findAll({ where: { productID: id } })
-  //     .then(data => res.status(200).send(data))
-  //     .catch(err => res.status(404).send('Error'));
-  // },
-  // findGoodProducts: (req, res) => {
-  //   let num = 5000000;
-  //   ProductDescription.findAll({ where: { productID: num } })
   //     .then(data => res.status(200).send(data))
   //     .catch(err => res.status(404).send('Error'));
   // },
@@ -145,3 +148,6 @@ module.exports = {
 //minigun report filename.json
 
 //30 seconds of testing 5 requests per second
+
+//log into postgres from local shell
+//psql postgres://ec2-18-219-218-107.us-east-2.compute.amazonaws.com:5432/nordstroms angela

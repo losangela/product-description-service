@@ -10,12 +10,8 @@ const controller = require('./controller');
 router.route('/findOneRandom')
   .get(controller.findOneRandom);
 
-//benchmark
-// router.route('/findGoodProducts')
-//   .get(controller.findGoodProducts);
-
 // // Fetch 5 dresses for Recommendation Bar
-// router.route('/recommendation')
-//   .get(controller.recommendation);
+router.route('/recommendation')
+  .get(controller.recommendation);
 
 module.exports = router;

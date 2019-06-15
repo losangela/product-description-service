@@ -34,16 +34,17 @@ const pg = require('pg');
 
 const config = {
   user: 'postgres',
-  host: 'localhost',
+  host: 'ec2-13-58-181-3.us-east-2.compute.amazonaws.com',
   database: 'nordstroms',
   password: 'password',
-  max: 50,
+  max: 40,
   min: 8,
-  idleTimeoutMillis: 30000
-  // port: 3211,
+  idleTimeoutMillis: 30000,
+  port: 5432
 }
 
-let pool = new pg.Pool(config)
+let pool = new pg.Pool(config);
+
 module.exports = pool;
 
   /*
@@ -53,7 +54,7 @@ module.exports = pool;
   */
 // const Sequelize = require('sequelize');
 // const sequelize = new Sequelize('nordstroms', 'postgres', 'password', {
-//   host: 'localhost',
+//   host: 'ec2-18-219-218-107.us-east-2.compute.amazonaws.com',
 //   dialect: 'postgres'
 // });
 
