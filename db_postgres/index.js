@@ -34,7 +34,7 @@ const pg = require('pg');
 
 const config = {
   user: 'postgres',
-  host: 'ec2-13-58-181-3.us-east-2.compute.amazonaws.com',
+  host: 'ec2-18-220-50-110.us-east-2.compute.amazonaws.com',
   database: 'nordstroms',
   password: 'password',
   max: 40,
