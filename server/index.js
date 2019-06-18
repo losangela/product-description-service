@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 3002;
 
 // Middleware
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
