@@ -37,7 +37,7 @@ const config = {
   host: 'ec2-18-219-55-251.us-east-2.compute.amazonaws.com', // update this every time you open database
   database: 'nordstroms',
   password: 'password',
-  max: 40,
+  max: 60,
   min: 8,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
