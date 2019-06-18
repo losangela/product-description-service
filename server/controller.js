@@ -16,13 +16,13 @@ module.exports = {
   */
   findOneRandom: (req, res) => {
     let id = Math.floor(Math.random() * Math.floor(10000000));
-    pool.query(`SELECT * FROM "products" AS "product" WHERE "product"."productID" = ${id};`)
+    pool.query(`SELECT * FROM "products" WHERE "productID" = ${id};`)
       .then(data => res.status(200).send(data.rows[0]))
       .catch(err => res.status(404).send(err));
   },
   recommendation: (req, res) => {
     let id = Math.floor(Math.random() * Math.floor(10000000));
-    pool.query(`SELECT * FROM "products" AS "product" WHERE "product"."productID" >= ${id} AND "product"."productID" < ${id+4};`)
+    pool.query(`SELECT * FROM "products" WHERE "productID" >= ${id} AND "productID" < ${id+4};`)
       .then(data => res.status(200).send(data.rows))
       .catch(err => res.status(404).send('Error'));
   },
