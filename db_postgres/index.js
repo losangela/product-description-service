@@ -38,7 +38,7 @@ const config = {
   database: 'nordstroms',
   password: 'password',
   max: 40,
-  min: 8,
+  // min: 8,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
   port: 5432
