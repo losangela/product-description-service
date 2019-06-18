@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 app.use('/productDescription', router);
 
 //for stress testing
-app.use('/loaderio-062423167a76b91d3d4f10cb23bf2aab', (req, res, next) => res.send('loaderio-062423167a76b91d3d4f10cb23bf2aab'))
+app.use('/loaderio-8c2ce3a40d6c4834f1c07a0b409afefd', (req, res, next) => res.send('loaderio-8c2ce3a40d6c4834f1c07a0b409afefd'))
 
 // Verifies and sets port on where server is listening at
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
