@@ -33,9 +33,12 @@
 const pg = require('pg');
 
 const config = {
-  user: 'ubuntu', // user: 'postgres',
-  host: 'ec2-18-218-45-85.us-east-2.compute.amazonaws.com', // update this every time you open database
-  database: 'productdescription', //database: 'nordstroms',
+  user: 'postgres',
+  host: 'ec2-3-19-61-75.us-east-2.compute.amazonaws.com',
+  database: 'nordstroms',
+  // user: 'ubuntu',
+  // host: 'ec2-18-218-45-85.us-east-2.compute.amazonaws.com', // update this every time you open database
+  // database: 'productdescription',
   password: 'password',
   max: 40,
   // min: 8,
