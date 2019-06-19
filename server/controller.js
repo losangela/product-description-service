@@ -17,7 +17,8 @@ module.exports = {
   findOneRandom: (req, res) => {
     // let id = Math.floor(Math.random() * Math.floor(100000)) + 9000000;
     let id = req.query.productID;
-    pool.query(`SELECT "productName" FROM "products" WHERE "productID" = ${id};`)
+    pool.query(`SELECT * FROM products WHERE id = ${id};`)
+    // pool.query(`SELECT "productName" FROM "products" WHERE "productID" = ${id};`)
       .then(data => res.status(200).send(data.rows[0]))
       .catch(err => res.status(404).send(err));
   },
