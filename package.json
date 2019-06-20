@@ -44,6 +44,7 @@
     "jest": "^24.8.0",
     "morgan": "^1.9.1",
     "node-sass": "^4.12.0",
+    "redis": "^2.8.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "svg-inline-loader": "^0.8.0",
@@ -63,7 +64,6 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-test-renderer": "^16.8.6",
-    "redis": "^2.8.0",
     "sequelize": "^5.8.7"
   },
   "jest": {
