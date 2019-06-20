@@ -41,7 +41,7 @@ module.exports = {
   //   pool.query(`SELECT * FROM products WHERE "productID" = ${id};`)
   //     .then(data => res.status(200).send(data.rows[0]))
   //     .catch(err => res.status(404).send(err));
-  // },
+  },
   recommendation: (req, res) => {
     let id = Math.floor(Math.random() * Math.floor(10000000));
     pool.query(`SELECT * FROM "products" WHERE "productID" >= ${id} AND "productID" < ${id+4};`)
