@@ -36,7 +36,7 @@ const config = {
   user: 'postgres',
   host: 'ec2-18-188-43-182.us-east-2.compute.amazonaws.com',
   database: 'nordstroms',
-  password: '',
+  password: 'password',
   max: 40,
   // min: 8,
   idleTimeoutMillis: 30000,
