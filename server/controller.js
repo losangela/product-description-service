@@ -6,7 +6,12 @@
 // const Op = Sequelize.Op;
 // const client = require('../db_postgres/index.js'); //pg postgres client connect
 const pool = require('../db_postgres/index.js'); // pg postgres pool
+const redisClient = require('redis').createClient({
+  host: 'ec2-18-216-128-1.us-east-2.compute.amazonaws.com',
+  password: 'angela'
+}); // port 6379
 
+redisClient.on('error', err => console.log('error connecting to redis', err));
 
 module.exports = {
   /*
@@ -15,12 +20,27 @@ module.exports = {
   ========================================================
   */
   findOneRandom: (req, res) => {
-    // let id = Math.floor(Math.random() * Math.floor(100000)) + 9000000;
-    let id = req.query.productID;
-    pool.query(`SELECT * FROM products WHERE "productID" = ${id};`)
-    // pool.query(`SELECT "productName" FROM "products" WHERE "productID" = ${id};`)
-      .then(data => res.status(200).send(data.rows[0]))
-      .catch(err => res.status(404).send(err));
+    let id = req.query.productID || Math.floor(Math.random() * Math.floor(100000)) + 9000000; // param: "productID" = num
+    let redisKey = `product${id}`;
+    redisClient.get(redisKey, (err, redisData) => {
+      if (redisData) {
+        console.log('reddis')
+        res.status(200).send(JSON.parse(redisData))
+      } else {
+        pool.query(`SELECT * FROM products WHERE "productID" = ${id};`)
+          .then(data => {
+            console.log('no reddis)')
+            redisClient.setex(redisKey, 60, JSON.stringify(data.rows[0]))
+            res.status(200).send(data.rows[0])
+          })
+          .catch(err => res.status(404).send(err));
+      }
+    })
+
+
+    // pool.query(`SELECT * FROM products WHERE "productID" = ${id};`)
+    //   .then(data => res.status(200).send(data.rows[0]))
+    //   .catch(err => res.status(404).send(err));
   },
   recommendation: (req, res) => {
     let id = Math.floor(Math.random() * Math.floor(10000000));
