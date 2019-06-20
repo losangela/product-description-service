@@ -24,12 +24,12 @@ module.exports = {
     let redisKey = `product${id}`;
     redisClient.get(redisKey, (err, redisData) => {
       if (redisData) {
-        console.log('reddis')
+        console.log('it was in reddis')
         res.status(200).send(JSON.parse(redisData))
       } else {
         pool.query(`SELECT * FROM products WHERE "productID" = ${id};`)
           .then(data => {
-            console.log('no reddis)')
+            console.log('it was not in reddis')
             redisClient.setex(redisKey, 60, JSON.stringify(data.rows[0]))
             res.status(200).send(data.rows[0])
           })
