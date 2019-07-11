@@ -1,6 +1,6 @@
 # Scaling up back end for Nordstroms application
 
-A full stack micro service of a product description on a shopping website, scaled up to handle 10 million pieces of data and handle 4500 RPS with 0% latency rate.
+I forked the legacy code of a microservice component of the product description of a full stack Nordstroms application, and scaled up the back end to handle 10 million pieces of data and handle 4500 RPS with 0% latency rate.
 
 ### Installing Dependencies
 
